@@ -154,6 +154,7 @@ public class ConnectionsPostsController implements InitializingBean {
                             response.setStatus(500);
                             return null;
                         } else {
+                            logger.info(utils.ipTag() + "Retrieved results from database");
                             PostResult[] posts = respPosts.getBody();
                             for (int i = 0; i < posts.length; i++)
                                 postSummaries.add(new PostSummary(getUsersname(posts[i].getUserId()), posts[i].getTitle(), posts[i].getDate()));
